@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel=" stylesheet" href="style.css">
+    <title>Website Loes</title>
+</head>
+
+<body>
+    <header>
+        <a href="#"class="logo"> Onyx </a>
+        <nav>
+            <a href="index.html">home</a>
+            <a href="about-me.html">About me!</a>
+            <a href="projects.html">Projects</a>
+            <a href="fun-facts.html">Fun facts!</a>
+        </nav>
+    </header>
+    <section class="home">
+        </div>
+    <div class="home-content">
+        <h1> Hey, Im <span>Onyx</span></h1>
+        <p>Hey! I'm Onyx and I am a teenage progammer. I love doing little and big projects and i try to learn coding at the best that i can. I follow tutorials and i want to understand te code. I am dutch and i have many friends. I go to a waldorf school with many creative subjects. My hobbys are: </p>
+        <p>- reading</p>
+        <p>- coding</p>
+        <p>- watching films</p>
+        <p>- having fun with friends</p>
+        </div>
+    </section>
+    <script>
+const links = document.querySelectorAll("nav a");
+let currentPage = window.location.pathname.split("/").pop();
+
+
+if(currentPage === ""){
+    currentPage = "index.html";
+}
+
+links.forEach(link => {
+    if(link.getAttribute("href") === currentPage){
+        link.classList.add("active");
+    }
+});
+</script>
+</body>
+</html>

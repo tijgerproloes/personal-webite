@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel=" stylesheet" href="style.css">
+    <title>Website Loes</title>
+</head>
+
+<body>
+    <header>
+        <a href="#"class="logo"> Onyx </a>
+        <nav>
+           <a href="index.html">home</a>
+            <a href="about-me.html">About me!</a>
+            <a href="projects.html">Projects</a>
+            <a href="fun-facts.html">Fun facts!</a>
+        </nav>
+    </header>
+    <section class="home">
+        </div>
+    <div class="home-content">
+        <h1><span>Projects</span></h1>
+        <p>I am a beginner progammer so i make a lot of projects to practice different types of codes, I especialy love to code websites and games</p>
+        <section class="projects">
+
+  <div class="project-card" onclick="openModal('project1')">
+    <img src="project1.png" alt="">
+    <h3>The Knight</h3>
+    <p>My first game project</p>
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="project1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('project1')">&times;</span>
+    <h2>The Knight</h2>
+    <p>This is my first project where I learned basic game mechanics.</p>
+
+    <div class="buttons">
+      <a href="https://github.com/tijgerproloes/The-knight-" target="_blank">GitHub</a>
+      <a href="https://relaxed-cassata-0fcf66.netlify.app/eerste%20project.html" target="_blank">Play</a>
+    </div>
+  </div>
+</div>
+    </section>
+    <script>
+const links = document.querySelectorAll("nav a");
+let currentPage = window.location.pathname.split("/").pop();
+
+
+if(currentPage === ""){
+    currentPage = "index.html";
+}
+
+links.forEach(link => {
+    if(link.getAttribute("href") === currentPage){
+        link.classList.add("active");
+    }
+});
+</script>
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+</script>
+</body>
+</html>

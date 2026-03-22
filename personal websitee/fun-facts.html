@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Website Loes</title>
+</head>
+
+<body>
+    <header>
+        <a href="#"class="logo"> Onyx </a>
+        <nav>
+            <a href="index.html">home</a>
+            <a href="about-me.html">About me!</a>
+            <a href="projects.html">Projects</a>
+            <a href="fun-facts.html">Fun facts!</a>
+        </nav>
+    </header>
+    <section class="home">
+        </div>
+    <div class="home-content">
+        <h1>fun facts!</h1>
+        <section class="funfacts">
+
+<section class="funfacts">
+    <img src="person.png" onclick="openFact(this, 'about')" class="fact-img">
+  <img src="boek.jpg" onclick="openFact(this, 'reading')" class="fact-img">
+  <img src="music.png" onclick="openFact(this, 'music')" class="fact-img">
+  <img src="coderen.png" onclick="openFact(this, 'coding')" class="fact-img">
+  
+
+</section>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="closeFact()">
+  <div class="overlay-content" onclick="event.stopPropagation()">
+    <img id="overlay-img" src="">
+    <div id="overlay-text"></div>
+  </div>
+</div>
+  </div>
+
+</section>
+        </div>
+    </section>
+   <script>
+const links = document.querySelectorAll("nav a");
+let currentPage = window.location.pathname.split("/").pop();
+
+
+if(currentPage === ""){
+    currentPage = "index.html";
+}
+
+links.forEach(link => {
+    if(link.getAttribute("href") === currentPage){
+        link.classList.add("active");
+    }
+});
+</script>
+<script>
+const data = {
+    about: `
+        <h2>Me!</h2>
+        <p>Non binary!</p>
+        <p>dutch</p>
+        <p>1 sister</p>
+    `,
+    reading: `
+        <h2>Reading </h2>
+        <p>The Hunger Games</p>
+        <p>Percy Jackson</p>
+        <p>Ranger's Apprentice</p>
+    `,
+    music: `
+        <h2>Music </h2>
+        <p>Piano</p>
+        <p>Bass</p>
+        <p>Ukulele</p>
+        <p>Guitar</p>
+    `,
+    coding: `
+        <h2>Coding </h2>
+        <p>Websites</p>
+        <p>Games</p>
+        <p>Learning new things</p>
+    `
+
+};
+
+function openFact(img, key) {
+    document.getElementById("overlay").style.display = "flex";
+    document.getElementById("overlay-img").src = img.src;
+    document.getElementById("overlay-text").innerHTML = data[key];
+}
+
+function closeFact() {
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
+</html>
